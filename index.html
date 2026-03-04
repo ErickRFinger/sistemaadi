@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de OS - WhatsApp</title>
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Ícones -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- Estilos -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-effects">
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+        <div class="glow-orb orb-3"></div>
+    </div>
+
+    <main class="container">
+        <div class="glass-card">
+            <header class="card-header">
+                <div class="icon-wrapper">
+                    <i class="ph ph-clipboard-text"></i>
+                </div>
+                <div>
+                    <h1>Nova Solicitação de Atendimento</h1>
+                    <p>Preencha os dados para gerar e enviar a OS via WhatsApp</p>
+                </div>
+            </header>
+
+            <form id="osForm">
+                <div class="input-group">
+                    <label for="solicitante">Nome do Solicitante</label>
+                    <div class="input-wrapper">
+                        <i class="ph ph-user"></i>
+                        <input type="text" id="solicitante" name="solicitante" placeholder="Ex: João da Silva" required>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="whatsapp">WhatsApp do Cliente</label>
+                    <div class="input-wrapper">
+                        <i class="ph ph-whatsapp-logo"></i>
+                        <input type="tel" id="whatsapp" name="whatsapp" placeholder="(00) 00000-0000" required maxlength="15">
+                    </div>
+                </div>
+
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="cidade">Cidade</label>
+                        <div class="input-wrapper">
+                            <i class="ph ph-map-pin"></i>
+                            <input type="text" id="cidade" name="cidade" placeholder="Ex: Palotina" required>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="servico">Tipo de Serviço</label>
+                        <div class="input-wrapper">
+                            <i class="ph ph-wrench"></i>
+                            <input type="text" id="servico" name="servico" placeholder="Ex: Instalação, Reparo..." required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="atendente">Aberto por</label>
+                        <div class="input-wrapper">
+                            <i class="ph ph-headset"></i>
+                            <input type="text" id="atendente" name="atendente" placeholder="Seu nome" required>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="status">Status da OS</label>
+                        <div class="input-wrapper select-wrapper">
+                            <i class="ph ph-flag"></i>
+                            <select id="status" name="status" required>
+                                <option value="OS Aberta - Necessário contato com o cliente para alinhamento.">OS Aberta - Aguardando Alinhamento</option>
+                                <option value="OS Aberta - Urgente.">OS Aberta - Urgente</option>
+                                <option value="OS Fechada.">OS Fechada</option>
+                            </select>
+                            <i class="ph ph-caret-down select-icon"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    <span>Gerar e Enviar via WhatsApp</span>
+                    <i class="ph ph-paper-plane-right"></i>
+                </button>
+            </form>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
