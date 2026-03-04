@@ -68,10 +68,23 @@
 
                     <div class="input-group">
                         <label for="servico">Tipo de Serviço</label>
-                        <div class="input-wrapper">
+                        <div class="input-wrapper select-wrapper">
                             <i class="ph ph-wrench"></i>
-                            <input type="text" id="servico" name="servico" placeholder="Ex: Instalação, Reparo..."
-                                required>
+                            <select id="servico" name="servico" required>
+                                <option value="" disabled selected>Selecione a categoria</option>
+                                <option value="INSTALAÇÃO">INSTALAÇÃO</option>
+                                <option value="MANUTENÇÃO">MANUTENÇÃO</option>
+                                <option value="TROCA DE TITULARIDADE">TROCA DE TITULARIDADE</option>
+                                <option value="COBRANÇA">COBRANÇA</option>
+                                <option value="ALTERAÇÃO DE PLANO">ALTERAÇÃO DE PLANO</option>
+                                <option value="TROCA DE ENDEREÇO">TROCA DE ENDEREÇO</option>
+                                <option value="OUTROS">OUTROS</option>
+                                <option value="RETIRADA">RETIRADA</option>
+                                <option value="ENTREGA DE COPO">ENTREGA DE COPO</option>
+                                <option value="RENOVAÇÃO">RENOVAÇÃO</option>
+                                <option value="ANOTAÇÃO">ANOTAÇÃO</option>
+                            </select>
+                            <i class="ph ph-caret-down select-icon"></i>
                         </div>
                     </div>
                 </div>
