@@ -99,6 +99,22 @@
                     </div>
 
                     <div class="input-group">
+                        <label for="destinatario">Destinatário</label>
+                        <div class="input-wrapper select-wrapper">
+                            <i class="ph ph-paper-plane-tilt"></i>
+                            <select id="destinatario" name="destinatario" required>
+                                <option value="" disabled selected>Selecione</option>
+                                <option value="GUSTAVO - BARRACÃO">GUSTAVO - BARRACÃO</option>
+                                <option value="GISELI - BARRACÃO">GISELI - BARRACÃO</option>
+                                <option value="ADILSON - PALOTINA">ADILSON - PALOTINA</option>
+                            </select>
+                            <i class="ph ph-caret-down select-icon"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-row">
+                    <div class="input-group">
                         <label for="status">Status da OS</label>
                         <div class="input-wrapper select-wrapper">
                             <i class="ph ph-flag"></i>
@@ -113,10 +129,28 @@
                     </div>
                 </div>
 
-                <button type="submit" class="submit-btn" id="submitBtn">
-                    <span>Gerar e Enviar via WhatsApp</span>
-                    <i class="ph ph-paper-plane-right"></i>
-                </button>
+                <div class="input-group">
+                    <label for="observacao">Observação</label>
+                    <div class="input-wrapper textarea-wrapper">
+                        <i class="ph ph-text-align-left"></i>
+                        <textarea id="observacao" name="observacao" placeholder="Digite as observações (opcional)..." rows="3"></textarea>
+                    </div>
+                </div>
+
+                <div class="actions-wrapper">
+                    <div class="secondary-actions">
+                        <button type="button" class="action-btn clear-btn" id="clearBtn" title="Limpar Formulário">
+                            <i class="ph ph-broom"></i>
+                        </button>
+                        <button type="button" class="action-btn copy-btn" id="copyBtn" title="Copiar Mensagem">
+                            <i class="ph ph-copy"></i>
+                        </button>
+                    </div>
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        <span>Gerar e Enviar via WhatsApp</span>
+                        <i class="ph ph-whatsapp-logo"></i>
+                    </button>
+                </div>
             </form>
         </div>
     </main>

@@ -144,6 +144,7 @@ body {
     font-weight: 600;
     margin-bottom: 0.25rem;
     background: linear-gradient(to right, #fff, #cbd5e1);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -251,9 +252,56 @@ body {
     pointer-events: none;
 }
 
-/* Button */
-.submit-btn {
+/* Actions Wrapper */
+.actions-wrapper {
+    display: flex;
+    gap: 1rem;
     margin-top: 1rem;
+}
+
+.secondary-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.action-btn {
+    background: var(--input-bg);
+    border: 1px solid var(--input-border);
+    color: var(--text-secondary);
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.action-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.action-btn:active {
+    transform: translateY(1px);
+}
+
+.clear-btn:hover {
+    color: #ef4444; /* Red color on hover for clear */
+    border-color: rgba(239, 68, 68, 0.3);
+}
+
+.copy-btn:hover {
+    color: var(--primary-color);
+}
+
+/* Main Button */
+.submit-btn {
+    flex: 1;
     background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
     color: white;
     border: none;
@@ -313,4 +361,31 @@ body {
         text-align: center;
         gap: 1rem;
     }
+}
+
+/* Textarea specific styling */
+.textarea-wrapper {
+    align-items: flex-start;
+    padding-top: 0.85rem;
+    padding-bottom: 0.85rem;
+}
+
+.textarea-wrapper i.ph {
+    top: 1.15rem;
+}
+
+.textarea-wrapper textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 0 1rem 0 3rem;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    outline: none;
+    resize: vertical;
+    min-height: 80px;
+}
+
+.textarea-wrapper textarea::placeholder {
+    color: rgba(148, 163, 184, 0.4);
 }
