@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de OS - WhatsApp</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 256 256%22><rect width=%22256%22 height=%22256%22 fill=%22none%22/><path d=%22M187.58,144.84l-32-16a8,8,0,0,0-8,.5l-14.69,9.8a40.55,40.55,0,0,1-16-16l9.8-14.69a8,8,0,0,0,.5-8l-16-32A8,8,0,0,0,104,64a40,40,0,0,0-40,40,88.1,88.1,0,0,0,88,88,40,40,0,0,0,40-40A8,8,0,0,0,187.58,144.84ZM152,176a72.08,72.08,0,0,1-72-72,24,24,0,0,1,19.29-23.54l11.48,23-8.12,12.18a8,8,0,0,0-.82,7.77,56.61,56.61,0,0,0,26.38,26.38,8,8,0,0,0,7.77-.82l12.18-8.12,23,11.48A24,24,0,0,1,152,176ZM128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Zm0,192a87.87,87.87,0,0,1-44.06-11.81,8,8,0,0,0-6.54-.67L44,214.65,55.13,181.3a8,8,0,0,0-.67-6.54A88,88,0,1,1,128,216Z%22 fill=%22%2310b981%22/></svg>">
+
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Ícones -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- Estilos -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="background-effects">
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+        <div class="glow-orb orb-3"></div>
+    </div>
+
+    <main class="container">
+        <div class="glass-card">
+            <header class="card-header">
+                <div class="icon-wrapper">
+                    <i class="ph ph-clipboard-text"></i>
+                </div>
+                <div>
+                    <h1>Nova Solicitação de Atendimento</h1>
+                    <p>Preencha os dados para gerar e enviar a OS via WhatsApp</p>
+                </div>
+            </header>
+
+            <form id="osForm">
+                <div class="input-group">
+                    <label for="solicitante">Nome do Solicitante</label>
+                    <div class="input-wrapper">
+                        <i class="ph ph-user"></i>
+                        <input type="text" id="solicitante" name="solicitante" placeholder="Ex: João da Silva" required>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="whatsapp">WhatsApp do Cliente</label>
+                    <div class="input-wrapper">
+                        <i class="ph ph-whatsapp-logo"></i>
+                        <input type="tel" id="whatsapp" name="whatsapp" placeholder="(00) 00000-0000" required
+                            maxlength="15">
+                    </div>
+                </div>
+
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="cidade">Cidade</label>
+                        <div class="input-wrapper">
+                            <i class="ph ph-map-pin"></i>
+                            <input type="text" id="cidade" name="cidade" placeholder="Ex: Palotina" required>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="servico">Tipo de Serviço</label>
+                        <div class="input-wrapper select-wrapper">
+                            <i class="ph ph-wrench"></i>
+                            <select id="servico" name="servico" required>
+                                <option value="" disabled selected>Selecione a categoria</option>
+                                <option value="INSTALAÇÃO">INSTALAÇÃO</option>
+                                <option value="MANUTENÇÃO">MANUTENÇÃO</option>
+                                <option value="TROCA DE TITULARIDADE">TROCA DE TITULARIDADE</option>
+                                <option value="COBRANÇA">COBRANÇA</option>
+                                <option value="ALTERAÇÃO DE PLANO">ALTERAÇÃO DE PLANO</option>
+                                <option value="TROCA DE ENDEREÇO">TROCA DE ENDEREÇO</option>
+                                <option value="OUTROS">OUTROS</option>
+                                <option value="RETIRADA">RETIRADA</option>
+                                <option value="ENTREGA DE COPO">ENTREGA DE COPO</option>
+                                <option value="RENOVAÇÃO">RENOVAÇÃO</option>
+                                <option value="ANOTAÇÃO">ANOTAÇÃO</option>
+                            </select>
+                            <i class="ph ph-caret-down select-icon"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="atendente">Aberto por</label>
+                        <div class="input-wrapper">
+                            <i class="ph ph-headset"></i>
+                            <input type="text" id="atendente" name="atendente" placeholder="Seu nome" required>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="destinatario">Destinatário</label>
+                        <div class="input-wrapper select-wrapper">
+                            <i class="ph ph-paper-plane-tilt"></i>
+                            <select id="destinatario" name="destinatario" required>
+                                <option value="" disabled selected>Selecione</option>
+                                <option value="GUSTAVO - BARRACÃO">GUSTAVO - BARRACÃO</option>
+                                <option value="GISELI - BARRACÃO">GISELI - BARRACÃO</option>
+                                <option value="ADILSON - PALOTINA">ADILSON - PALOTINA</option>
+                            </select>
+                            <i class="ph ph-caret-down select-icon"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="status">Status da OS</label>
+                        <div class="input-wrapper select-wrapper">
+                            <i class="ph ph-flag"></i>
+                            <select id="status" name="status" required>
+                                <option value="OS Aberta - Necessário contato com o cliente para alinhamento.">OS Aberta
+                                    - Aguardando Alinhamento</option>
+                                <option value="OS Aberta - Urgente.">OS Aberta - Urgente</option>
+                                <option value="OS Fechada.">OS Fechada</option>
+                            </select>
+                            <i class="ph ph-caret-down select-icon"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="observacao">Observação</label>
+                    <div class="input-wrapper textarea-wrapper">
+                        <i class="ph ph-text-align-left"></i>
+                        <textarea id="observacao" name="observacao" placeholder="Digite as observações (opcional)..." rows="3"></textarea>
+                    </div>
+                </div>
+
+                <div class="actions-wrapper">
+                    <div class="secondary-actions">
+                        <button type="button" class="action-btn clear-btn" id="clearBtn" title="Limpar Formulário">
+                            <i class="ph ph-broom"></i>
+                        </button>
+                        <button type="button" class="action-btn copy-btn" id="copyBtn" title="Copiar Mensagem">
+                            <i class="ph ph-copy"></i>
+                        </button>
+                    </div>
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        <span>Gerar e Enviar via WhatsApp</span>
+                        <i class="ph ph-whatsapp-logo"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
